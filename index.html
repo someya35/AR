@@ -7,7 +7,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!--A-Frameと、AR.jsのA-FrameバージョンのJavaScriptを読み込みます。また、look-atを使用するためのライブラリも読み込みます。-->
+    <!--A-Frameと、AR.jsのA-FrameバージョンのJavaScriptの読み込み。また、look-atを使用するためのライブラリの読み込み。-->
     <style>
     #debug {
         position: fixed;
@@ -29,9 +29,10 @@
       arjs="sourceType: webcam; debugUIEnabled: false;"
     >
       <a-box
-        material="color: red"
+        src="datas/pin/icon_1r_64.png"
+        look-at="[gps-camera]"
         gps-entity-place="latitude: 35.930106; longitude: 139.852198;"
-        scale="15 15 15"
+        scale="1 1 1"
       ></a-box>
       <a-text
         id="text"
@@ -46,9 +47,9 @@
     <!--latitude緯度,longitude経度-->
 
       <a-camera
-        gps-camera="minDistance:0; maxDistance:1000; gpsMinDistance:10;"
-        rotation-reader>
-      </a-camera>
+        gps-camera
+        rotation-reader
+      ></a-camera>
     <!-- GPS情報を利用するためa-cameraにgps-cameraを追加します。加えて、回転イベントを処理するためにrotation-readerも追加します。 -->
     <!-- gps-cameraにminDistanceとmaxDistanceプロパティを設定すると、ARコンテンツを表示する最大距離、最小距離を設定できます。単位はmです。 -->
     <!-- gps-cameraにgpsMinDistanceプロパティを使用するとGPS更新イベントの発生をメートル単位で制御できます。 -->
